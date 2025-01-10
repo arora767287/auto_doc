@@ -14,11 +14,12 @@ A Flask-based web application that analyzes browser history using AI to provide 
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
-
+```
 3. Install dependencies:
 
 ```bash
 pip install -r requirements.txt
+```
 
 4. Create a .env file in the root directory with the following variables:
 
