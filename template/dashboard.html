@@ -1,8 +1,52 @@
 {% extends "base.html" %}
+
 {% block content %}
 <div class="dashboard">
-    <h1>Documentation Dashboard</h1>
-    <button id="generateDoc">Generate Documentation</button>
-    <div id="documentation-output"></div>
+    <h1>Dashboard</h1>
+    
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    Browser History Analysis
+                </div>
+                <div class="card-body">
+                    <button id="analyze-btn" class="btn btn-primary">Analyze History</button>
+                    <div id="analysis-results" class="mt-3"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    Statistics
+                </div>
+                <div class="card-body">
+                    <div id="stats-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    $(document).ready(function() {
+        $('#analyze-btn').click(function() {
+            $.ajax({
+                url: '/analyze',
+                method: 'POST',
+                success: function(response) {
+                    $('#analysis-results').html(response.analysis);
+                    $('#stats-container').html(response.statistics);
+                },
+                error: function(error) {
+                    alert('Error analyzing browser history');
+                }
+            });
+        });
+    });
+</script>
 {% endblock %}
