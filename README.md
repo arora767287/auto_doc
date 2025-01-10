@@ -8,74 +8,53 @@ A Flask-based web application that analyzes browser history using AI to provide 
    ```bash
    git clone <repository-url>
    cd browser-history-analyzer
-Create and activate a virtual environment:
+   
+2. Create and activate a virtual environment:
 
-bash
-Copy code
+   ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
-Install dependencies:
 
-bash
-Copy code
+3. Install dependencies:
+
+   ```bash
 pip install -r requirements.txt
-Create a .env file in the root directory with the following variables:
 
-plaintext
-Copy code
+4. Create a .env file in the root directory with the following variables:
+
 FLASK_APP=run.py
 FLASK_ENV=development
 SECRET_KEY=your-secret-key
 DATABASE_URL=sqlite:///site.db
 OPENAI_API_KEY=your-openai-api-key
-Initialize the database:
 
-bash
-Copy code
+5. Initialize the database:
+
+   ```bash
 flask db init
 flask db migrate
 flask db upgrade
-Running the Application
-Ensure your virtual environment is activated.
 
-Run the Flask application:
+6. Running the Application
 
-bash
-Copy code
+### Ensure your virtual environment is activated.
+7. Run the Flask application:
+
+```bash
 flask run
 Access the application at http://localhost:5000.
 
-Features
+### Features
 Browser history collection from Chrome and Safari
 AI-powered analysis of browsing patterns
 User authentication
 Detailed insights dashboard
 Export functionality for analysis results
-Requirements
-Python 3.8+
-Flask
-SQLAlchemy
-OpenAI API key
-Notes
-After adding these files, your application should be complete. Make sure to:
 
 Create the necessary directories if they don't exist.
 Set up your environment variables in the .env file.
 Install all required dependencies.
 Initialize and migrate the database before running the application.
 The application should now be fully functional with all necessary components in place.
-
-
-This ensures it is all in one block. You can directly use this as your `README.md`.
-
-
-
-
-
-
-
-
-
-
 
 
