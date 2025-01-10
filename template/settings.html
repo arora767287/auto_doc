@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="settings-container">
+    <h2>Integration Settings</h2>
+    <form method="POST" action="{{ url_for('settings.update') }}">
+        <h3>Jira Integration</h3>
+        <div class="form-group">
+            <label for="jira_url">Jira URL</label>
+            <input type="url" id="jira_url" name="jira_url" value="{{ current_user.jira_url }}">
+        </div>
+        <div class="form-group">
+            <label for="jira_username">Jira Username</label>
+            <input type="text" id="jira_username" name="jira_username" value="{{ current_user.jira_username }}">
+        </div>
+        <div class="form-group">
+            <label for="jira_token">Jira API Token</label>
+            <input type="password" id="jira_token" name="jira_token">
+        </div>
+        <div class="form-check">
+            <input type="checkbox" id="jira_enabled" name="jira_enabled" {% if current_user.jira_enabled %}checked{% endif %}>
+            <label for="jira_enabled">Enable Jira Integration</label>
+        </div>
+
+        <h3>Confluence Integration</h3>
+        <div class="form-group">
+            <label for="confluence_url">Confluence URL</label>
+            <input type="url" id="confluence_url" name="confluence_url" value="{{ current_user.confluence_url }}">
+        </div>
+        <div class="form-group">
+            <label for="confluence_username">Confluence Username</label>
+            <input type="text" id="confluence_username" name="confluence_username" value="{{ current_user.confluence_username }}">
+        </div>
+        <div class="form-group">
+            <label for="confluence_token">Confluence API Token</label>
+            <input type="password" id="confluence_token" name="confluence_token">
+        </div>
+        <div class="form-check">
+            <input type="checkbox" id="confluence_enabled" name="confluence_enabled" {% if current_user.confluence_enabled %}checked{% endif %}>
+            <label for="confluence_enabled">Enable Confluence Integration</label>
+        </div>
+
+        <h3>OpenAI Integration</h3>
+        <div class="form-group">
+            <label for="openai_key">OpenAI API Key</label>
+            <input type="password" id="openai_key" name="openai_key">
+        </div>
+        <div class="form-check">
+            <input type="checkbox" id="openai_enabled" name="openai_enabled" {% if current_user.openai_enabled %}checked{% endif %}>
+            <label for="openai_enabled">Enable OpenAI Integration</label>
+        </div>
+
+        <h3>Browser History</h3>
+        <div class="form-check">
+            <input type="checkbox" id="browser_history_enabled" name="browser_history_enabled" {% if current_user.browser_history_enabled %}checked{% endif %}>
+            <label for="browser_history_enabled">Enable Browser History Collection</label>
+        </div>
+
+        <h3>Update Frequency</h3>
+        <div class="form-group">
+            <label for="update_frequency">Hours between updates</label>
+            <input type="number" id="update_frequency" name="update_frequency" value="{{ current_user.update_frequency }}" min="1" max="24">
+        </div>
+
+        <button type="submit">Save Settings</button>
+    </form>
+</div>
+{% endblock %}
