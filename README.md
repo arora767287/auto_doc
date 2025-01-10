@@ -35,6 +35,7 @@ OPENAI_API_KEY=your-openai-api-key
 flask db init
 flask db migrate
 flask db upgrade
+```
 
 6. Running the Application
 
@@ -43,19 +44,13 @@ flask db upgrade
 
 ```bash
 flask run
+```
+
 Access the application at http://localhost:5000.
 
 ### Features
-Browser history collection from Chrome and Safari
-AI-powered analysis of browsing patterns
-User authentication
-Detailed insights dashboard
-Export functionality for analysis results
-
-Create the necessary directories if they don't exist.
-Set up your environment variables in the .env file.
-Install all required dependencies.
-Initialize and migrate the database before running the application.
-The application should now be fully functional with all necessary components in place.
-
-
+- Browser history collection from Chrome and Safari
+- AI-powered analysis of browsing patterns
+- User authentication
+- Detailed insights dashboard
+- Export functionality for analysis results
