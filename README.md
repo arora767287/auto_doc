@@ -31,16 +31,13 @@ OPENAI_API_KEY=your-openai-api-key
 
 5. Initialize the database:
 
-   ```bash
+```bash
 flask db init
 flask db migrate
 flask db upgrade
 ```
 
 6. Running the Application
-
-### Ensure your virtual environment is activated.
-7. Run the Flask application:
 
 ```bash
 flask run
