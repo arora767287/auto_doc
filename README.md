@@ -23,11 +23,11 @@ pip install -r requirements.txt
 
 4. Create a .env file in the root directory with the following variables:
 
-FLASK_APP=run.py \\
-FLASK_ENV=development \\
-SECRET_KEY=your-secret-key \\
-DATABASE_URL=sqlite:///site.db \\
-OPENAI_API_KEY=your-openai-api-key \\
+- FLASK_APP=run.py
+- FLASK_ENV=development
+- SECRET_KEY=your-secret-key
+- DATABASE_URL=sqlite:///site.db
+- OPENAI_API_KEY=your-openai-api-key
 
 5. Initialize the database:
 
